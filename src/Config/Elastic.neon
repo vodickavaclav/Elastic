@@ -110,57 +110,30 @@ services:
 
 	createIndex:
 		factory: Spameri\Elastic\Commands\CreateIndex(%entities%)
-		tags:
-			- kdyby.console.command
-			- console.command
 
 	updateMapping:
 		factory: Spameri\Elastic\Commands\UpdateMapping(%entities%)
-		tags:
-			- kdyby.console.command
-			- console.command
 
 	deleteIndex:
 		factory: Spameri\Elastic\Commands\DeleteIndex
-		tags:
-			- kdyby.console.command
-			- console.command
 
 	addAlias:
 		factory: Spameri\Elastic\Commands\AddAlias
-		tags:
-			- kdyby.console.command
-			- console.command
 
 	removeAlias:
 		factory: Spameri\Elastic\Commands\RemoveAlias
-		tags:
-			- kdyby.console.command
-			- console.command
 
 	validateMappingCommand:
 		factory: Spameri\Elastic\Commands\ValidateMapping
-		tags:
-			- kdyby.console.command
-			- console.command
 
 	typeToNewIndex:
 		factory: Spameri\Elastic\Commands\TypeToNewIndex
-		tags:
-			- kdyby.console.command
-			- console.command
 
 	dumpIndex:
 		factory: Spameri\Elastic\Commands\DumpIndex
-		tags:
-			- kdyby.console.command
-			- console.command
 
 	loadDump:
 		factory: Spameri\Elastic\Commands\LoadDump
-		tags:
-			- kdyby.console.command
-			- console.command
 
 #	###
 #	Spameri/ElasticQuery

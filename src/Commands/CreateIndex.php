@@ -28,7 +28,6 @@ class CreateIndex extends \Symfony\Component\Console\Command\Command
 		$this->elasticMapper = $elasticMapper;
 	}
 
-
 	protected function configure() : void
 	{
 		$this
