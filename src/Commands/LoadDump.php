@@ -5,6 +5,7 @@ namespace Spameri\Elastic\Commands;
 
 class LoadDump extends \Symfony\Component\Console\Command\Command
 {
+	protected static $defaultName = 'spameri:elastic:load-dump';
 
 	/**
 	 * @var \Spameri\Elastic\Model\RestoreIndex
@@ -27,7 +28,7 @@ class LoadDump extends \Symfony\Component\Console\Command\Command
 	protected function configure() : void
 	{
 		$this
-			->setName('spameri:elastic:load-dump')
+			->setName(self::$defaultName)
 			->setDescription('Loads data from provided dump file.')
 			->addArgument('filename', \Symfony\Component\Console\Input\InputArgument::REQUIRED)
 			->addArgument(

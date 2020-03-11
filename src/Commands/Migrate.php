@@ -5,6 +5,7 @@ namespace Spameri\Elastic\Commands;
 
 class Migrate extends \Symfony\Component\Console\Command\Command
 {
+	protected static $defaultName = 'spameri:elastic:migrate';
 
 	/**
 	 * @example spameri:elastic:load-dump
@@ -12,7 +13,7 @@ class Migrate extends \Symfony\Component\Console\Command\Command
 	protected function configure() : void
 	{
 		$this
-			->setName('spameri:elastic:migrate')
+			->setName(self::$defaultName)
 			->setDescription('Runs migrations from files.')
 			->addArgument('filename', \Symfony\Component\Console\Input\InputArgument::OPTIONAL)
 		;

@@ -5,6 +5,7 @@ namespace Spameri\Elastic\Commands;
 
 class DeleteIndex extends \Symfony\Component\Console\Command\Command
 {
+	protected static $defaultName = 'spameri:elastic:delete-index';
 
 	/**
 	 * @var \Spameri\Elastic\Mapper\ElasticMapper
@@ -24,7 +25,7 @@ class DeleteIndex extends \Symfony\Component\Console\Command\Command
 	protected function configure() : void
 	{
 		$this
-			->setName('spameri:elastic:delete-index')
+			->setName(self::$defaultName)
 			->setDescription('Deletes index by name or alias. Warning this deletes your data!')
 			->addArgument('indexName', \Symfony\Component\Console\Input\InputArgument::IS_ARRAY)
 		;

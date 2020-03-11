@@ -5,6 +5,7 @@ namespace Spameri\Elastic\Commands;
 
 class UpdateMapping extends \Symfony\Component\Console\Command\Command
 {
+	protected static $defaultName = 'spameri:elastic:update-mapping';
 
 	/**
 	 * @var array
@@ -31,7 +32,7 @@ class UpdateMapping extends \Symfony\Component\Console\Command\Command
 	protected function configure() : void
 	{
 		$this
-			->setName('spameri:elastic:update-mapping')
+			->setName(self::$defaultName)
 			->setDescription('Updates mapping in index for entity.')
 			->addArgument('entityName')
 		;

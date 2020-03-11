@@ -5,6 +5,7 @@ namespace Spameri\Elastic\Commands;
 
 class CreateIndex extends \Symfony\Component\Console\Command\Command
 {
+	protected static $defaultName = 'spameri:elastic:create-index';
 
 	/**
 	 * @var array
@@ -31,7 +32,7 @@ class CreateIndex extends \Symfony\Component\Console\Command\Command
 	protected function configure() : void
 	{
 		$this
-			->setName('spameri:elastic:create-index')
+			->setName(self::$defaultName)
 			->setDescription('Creates index and puts mapping for entity/ies.')
 			->addArgument('entityName', \Symfony\Component\Console\Input\InputArgument::OPTIONAL)
 			->addOption(

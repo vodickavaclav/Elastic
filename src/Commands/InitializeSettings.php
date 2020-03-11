@@ -4,6 +4,7 @@ namespace Spameri\Elastic\Commands;
 
 class InitializeSettings extends \Symfony\Component\Console\Command\Command
 {
+	protected static $defaultName = 'spameri:elastic:initialize-settings';
 
 	/**
 	 * @var \Spameri\Elastic\Settings\IndexConfigInterface[]
@@ -22,7 +23,7 @@ class InitializeSettings extends \Symfony\Component\Console\Command\Command
 	public function configure(): void
 	{
 		$this
-			->setName('spameri:elastic:initialize-settings')
+			->setName(self::$defaultName)
 			->setDescription('Creates index and puts mapping and settings for entity/ies.')
 		;
 	}

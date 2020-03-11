@@ -3,6 +3,8 @@
 namespace Spameri\Elastic\DI;
 
 
+use Tracy\Debugger;
+
 class SpameriElasticSearchExtension extends \Nette\DI\CompilerExtension
 {
 
@@ -116,10 +118,8 @@ class SpameriElasticSearchExtension extends \Nette\DI\CompilerExtension
 
 		$this->setConfigOptions($services, $config);
 
-		$this->compiler->parseServices(
-			$this->getContainerBuilder(),
-			$services,
-			$this->name
+		$this->loadDefinitionsFromConfig(
+			$services['services']
 		);
 	}
 
@@ -145,17 +145,17 @@ class SpameriElasticSearchExtension extends \Nette\DI\CompilerExtension
 		array $config
 	) : void
 	{
-		$updateMapping = $services['services']['updateMapping']['class'];
+		$updateMapping = $services['services']['updateMapping']['factory'];
 		$updateMapping->arguments[0] = $config['entities'];
 
-		$createIndex = $services['services']['createIndex']['class'];
+		$createIndex = $services['services']['createIndex']['factory'];
 		$createIndex->arguments[0] = $config['entities'];
 
-		$validateMapping = $services['services']['validateMapping']['class'];
+		$validateMapping = $services['services']['validateMapping']['factory'];
 		$validateMapping->arguments[0] = $config['entities'];
 		$validateMapping->arguments[1] = $config['settings'];
 
-		$neonSettingsProvider = $services['services']['neonSettingsProvider']['class'];
+		$neonSettingsProvider = $services['services']['neonSettingsProvider']['factory'];
 		$neonSettingsProvider->arguments[0] = $config['host'];
 		$neonSettingsProvider->arguments[1] = $config['port'];
 	}

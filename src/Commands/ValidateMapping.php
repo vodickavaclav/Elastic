@@ -5,6 +5,7 @@ namespace Spameri\Elastic\Commands;
 
 class ValidateMapping extends \Symfony\Component\Console\Command\Command
 {
+	protected static $defaultName = 'spameri:elastic:validate-mapping';
 
 	/**
 	 * @var \Spameri\Elastic\Model\ValidateMapping
@@ -24,7 +25,7 @@ class ValidateMapping extends \Symfony\Component\Console\Command\Command
 	protected function configure() : void
 	{
 		$this
-			->setName('spameri:elastic:validate-mapping')
+			->setName(self::$defaultName)
 			->setDescription('Validates all neon entity mappings.')
 		;
 	}
