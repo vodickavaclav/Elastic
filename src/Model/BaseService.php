@@ -49,7 +49,7 @@ abstract class BaseService implements IService
 	/**
 	 * @var \Spameri\Elastic\Factory\ICollectionFactory
 	 */
-	private $collectionFactory;
+	protected $collectionFactory;
 	/**
 	 * @var \Spameri\Elastic\Model\Aggregate
 	 */
